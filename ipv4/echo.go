@@ -43,7 +43,7 @@ func (this *EchoSummary) Send() int {
 	return this.Received() + this.Loss()
 }
 func (this *EchoSummary) LossRate() float64 {
-	rate := float64(this.Loss()) / float64(this.Send())
+	rate := float64(this.Loss()) / float64(this.Send()) * 100
 	return jmath.Round(rate, 2)
 }
 func (this *EchoSummary) Min() float64 {
